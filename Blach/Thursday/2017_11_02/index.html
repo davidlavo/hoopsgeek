@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+<title>Darks vs. Lights</title>
+
+<script type="text/javascript">
+function showPlayerChart(playerName, teamName, chartId)
+{
+   var chartPrefix = "Shot_Chart_-_";
+   var chartSuffix = "_-_Totals.png";
+   var chartSrc;
+   if (playerName == teamName)
+      chartSrc = chartPrefix.concat(teamName, chartSuffix);
+   else
+      chartSrc = chartPrefix.concat(playerName, "_(", teamName, ")", chartSuffix);
+   document.getElementById(chartId).src=chartSrc;
+}
+</script>
+
+<style type="text/css">
+h1 {padding-top: 20px; padding-bottom:5px; font-family:"Helvetica", "Arial", sans-serif;}
+h2 {padding-top: 20px; padding-bottom:5px; font-family:"Helvetica", "Arial", sans-serif;}
+table.linescore {width:100%; margin-left:auto; margin-right:auto;}
+div.linescore {margin:10px; width:100%}
+tr.teamnamerow {font-weight:bold; font-family:"Helvetica", "Arial", sans-serif;}
+tr.playernamerow {background:#CCCCCC; font-weight:bold; font-family:"Helvetica", "Arial", sans-serif;}
+tr.daterangerow {background:#EEEEEE; text-align:center; font-family:"Helvetica", "Arial", sans-serif;}
+tr.colheadrow {background:#CCCCCC; font-weight:bold; font-family:"Helvetica", "Arial", sans-serif;}
+tr.oddrow {background:#FFFFFF; font-family:"Helvetica", "Arial", sans-serif;}
+tr.evenrow {background:#EEEEEE; font-family:"Helvetica", "Arial", sans-serif;}
+tr.totalsrow {background:#CCCCCC; font-weight:bold; font-family:"Helvetica", "Arial", sans-serif;}
+tr.percentrow {background:#EEEEEE; font-weight:bold; font-family:"Helvetica", "Arial", sans-serif;}
+td {font-family:"Helvetica", "Arial", sans-serif;}
+td.playername {text-align:center; padding-top:5px; padding-bottom:5px;}
+td.total {font-weight:bold; font-family:"Helvetica", "Arial", sans-serif; white-space:nowrap;}
+td.totalscore {font-weight:bold; font-family:"Helvetica", "Arial", sans-serif; white-space:nowrap;}
+td.linescoretitle {width:50%%; text-align:center; font-family:"Helvetica", "Arial", sans-serif; white-space:nowrap;}
+img.shotchart {font: italic 16px "Helvetica", "Arial", sans-serif; text-align: center; background:#eeeeee; display: block; margin-left: auto; margin-right: auto;}
+form.chartselector {text-align:center; margin-left:auto; margin-right:auto; margin-bottom:10px;}
+</style>
+
+</head>
+
+<body>
+
+<div class="linescore">
+<table class="linescore" cellpadding="3" cellspacing="1" border="0" frame="hsides" rules="groups">
+<colgroup span="6"/>
+<tr>
+<td class="team"></td>
+<td class="period" style="text-align:center">1</td>
+<td class="period" style="text-align:center">2</td>
+<td class="period" style="text-align:center">3</td>
+<td class="period" style="text-align:center">4</td>
+<td class="total" style="text-align:center">W</td>
+<td class="title"></td>
+</tr>
+<tr>
+<td class="team">
+Darks
+</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">15</td>
+<td class="totalscore" style="text-align:center">2</td>
+<td class="linescoretitle">Darks vs. Lights</td>
+</tr>
+<tr>
+<td class="team">
+Lights
+</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">7</td>
+<td class="totalscore" style="text-align:center">2</td>
+<td class="linescoretitle">Nov 2, 2017</td>
+</tr>
+</table>
+</div>
+
+<table cellpadding="3" cellspacing="1" border="0" width="100%" >
+
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #FFFFFF; background-color: #0000FF;">Darks</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">David K</td>
+<td>0-6</td><td>0-5</td><td>6</td><td>6</td><td>12</td><td>0</td><td>0</td><td>5</td><td>9</td><td>0-0</td><td>0</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">David L</td>
+<td>10-16</td><td>0-0</td><td>7</td><td>7</td><td>14</td><td>0</td><td>2</td><td>3</td><td>5</td><td>0-0</td><td>-2</td><td>10</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Blaz</td>
+<td>5-7</td><td>0-0</td><td>3</td><td>14</td><td>17</td><td>1</td><td>0</td><td>3</td><td>4</td><td>0-0</td><td>+3</td><td>5</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Al</td>
+<td>12-28</td><td>6-15</td><td>2</td><td>5</td><td>7</td><td>2</td><td>0</td><td>1</td><td>5</td><td>0-0</td><td>+1</td><td>12</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>5-13</td><td>0-0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>4</td><td>0-0</td><td>-7</td><td>5</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Jamal</td>
+<td>5-24</td><td>2-13</td><td>1</td><td>7</td><td>8</td><td>2</td><td>0</td><td>4</td><td>3</td><td>0-0</td><td>0</td><td>5</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>37-94</td><td>8-33</td><td>19</td><td>40</td><td>59</td><td>5</td><td>2</td><td>17</td><td>30</td><td>0-0</td><td></td><td>37</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>39.4%</td><td>24.2%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+<tr><td colspan="13"></tr>
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #000000; background-color: #AAAAAA;">Lights</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Bryan</td>
+<td>3-9</td><td>0-0</td><td>2</td><td>4</td><td>6</td><td>3</td><td>0</td><td>1</td><td>4</td><td>0-0</td><td>+1</td><td>3</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Danny</td>
+<td>9-28</td><td>0-1</td><td>6</td><td>11</td><td>17</td><td>1</td><td>1</td><td>3</td><td>7</td><td>0-0</td><td>+1</td><td>9</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Joel</td>
+<td>3-16</td><td>0-0</td><td>7</td><td>6</td><td>13</td><td>3</td><td>0</td><td>0</td><td>2</td><td>0-0</td><td>+1</td><td>3</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Justin W</td>
+<td>11-27</td><td>1-8</td><td>3</td><td>2</td><td>5</td><td>3</td><td>0</td><td>1</td><td>2</td><td>0-0</td><td>+1</td><td>11</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Steve</td>
+<td>11-16</td><td>0-0</td><td>2</td><td>9</td><td>11</td><td>2</td><td>0</td><td>2</td><td>5</td><td>0-0</td><td>+9</td><td>11</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>1-6</td><td>0-0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>-8</td><td>1</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>38-102</td><td>1-9</td><td>20</td><td>33</td><td>53</td><td>12</td><td>1</td><td>7</td><td>20</td><td>0-0</td><td></td><td>38</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>37.3%</td><td>11.1%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+</table>
+<h2>Game 1</h2><table cellpadding="3" cellspacing="1" border="0" width="100%" >
+
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #FFFFFF; background-color: #0000FF;">Darks</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">David K</td>
+<td>0-1</td><td>0-1</td><td>2</td><td>1</td><td>3</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0-0</td><td>+3</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">David L</td>
+<td>2-5</td><td>0-0</td><td>3</td><td>0</td><td>3</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0-0</td><td>-1</td><td>2</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Blaz</td>
+<td>2-4</td><td>0-0</td><td>1</td><td>6</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>+2</td><td>2</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Al</td>
+<td>4-8</td><td>2-5</td><td>1</td><td>1</td><td>2</td><td>1</td><td>0</td><td>1</td><td>2</td><td>0-0</td><td>+2</td><td>4</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>1-3</td><td>0-0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>3</td><td>0-0</td><td>+2</td><td>1</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Jamal</td>
+<td>2-7</td><td>2-5</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0-0</td><td>+2</td><td>2</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>11-28</td><td>4-11</td><td>7</td><td>10</td><td>17</td><td>2</td><td>0</td><td>3</td><td>9</td><td>0-0</td><td></td><td>11</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>39.3%</td><td>36.4%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+<tr><td colspan="13"></tr>
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #000000; background-color: #AAAAAA;">Lights</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Bryan</td>
+<td>0-1</td><td>0-0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>-2</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Danny</td>
+<td>1-6</td><td>0-0</td><td>2</td><td>5</td><td>7</td><td>0</td><td>1</td><td>1</td><td>2</td><td>0-0</td><td>-2</td><td>1</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Joel</td>
+<td>2-6</td><td>0-0</td><td>2</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0-0</td><td>-2</td><td>2</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Justin W</td>
+<td>4-10</td><td>0-3</td><td>2</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td><td>1</td><td>0-0</td><td>-2</td><td>4</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Steve</td>
+<td>2-3</td><td>0-0</td><td>0</td><td>3</td><td>3</td><td>1</td><td>0</td><td>2</td><td>1</td><td>0-0</td><td>-2</td><td>2</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>0-0</td><td>0-0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>0</td><td>0</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>9-26</td><td>0-3</td><td>7</td><td>8</td><td>15</td><td>3</td><td>1</td><td>3</td><td>5</td><td>0-0</td><td></td><td>9</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>34.6%</td><td>0.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+</table>
+<h2>Game 2</h2><table cellpadding="3" cellspacing="1" border="0" width="100%" >
+
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #FFFFFF; background-color: #0000FF;">Darks</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">David K</td>
+<td>0-1</td><td>0-1</td><td>1</td><td>3</td><td>4</td><td>0</td><td>0</td><td>3</td><td>1</td><td>0-0</td><td>-5</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">David L</td>
+<td>1-2</td><td>0-0</td><td>3</td><td>2</td><td>5</td><td>0</td><td>1</td><td>1</td><td>2</td><td>0-0</td><td>-5</td><td>1</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Blaz</td>
+<td>1-1</td><td>0-0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>2</td><td>1</td><td>0-0</td><td>-1</td><td>1</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Al</td>
+<td>2-6</td><td>1-3</td><td>1</td><td>1</td><td>2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>-5</td><td>2</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>2-7</td><td>0-0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0-0</td><td>-5</td><td>2</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Jamal</td>
+<td>0-3</td><td>0-2</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0-0</td><td>-4</td><td>0</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>6-20</td><td>1-6</td><td>5</td><td>9</td><td>14</td><td>1</td><td>1</td><td>7</td><td>5</td><td>0-0</td><td></td><td>6</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>30.0%</td><td>16.7%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+<tr><td colspan="13"></tr>
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #000000; background-color: #AAAAAA;">Lights</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Bryan</td>
+<td>0-0</td><td>0-0</td><td>1</td><td>1</td><td>2</td><td>2</td><td>0</td><td>0</td><td>3</td><td>0-0</td><td>+5</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Danny</td>
+<td>2-8</td><td>0-1</td><td>2</td><td>3</td><td>5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0-0</td><td>+5</td><td>2</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Joel</td>
+<td>1-5</td><td>0-0</td><td>1</td><td>2</td><td>3</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>+5</td><td>1</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Justin W</td>
+<td>5-9</td><td>1-2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0-0</td><td>+5</td><td>5</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Steve</td>
+<td>3-5</td><td>0-0</td><td>2</td><td>2</td><td>4</td><td>0</td><td>0</td><td>0</td><td>3</td><td>0-0</td><td>+5</td><td>3</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>0-0</td><td>0-0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>0</td><td>0</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>11-27</td><td>1-3</td><td>6</td><td>9</td><td>15</td><td>6</td><td>0</td><td>1</td><td>7</td><td>0-0</td><td></td><td>11</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>40.7%</td><td>33.3%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+</table>
+<h2>Game 3</h2><table cellpadding="3" cellspacing="1" border="0" width="100%" >
+
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #FFFFFF; background-color: #0000FF;">Darks</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">David K</td>
+<td>0-2</td><td>0-1</td><td>1</td><td>1</td><td>2</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0-0</td><td>-6</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">David L</td>
+<td>3-3</td><td>0-0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0-0</td><td>-4</td><td>3</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Blaz</td>
+<td>0-0</td><td>0-0</td><td>1</td><td>5</td><td>6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0-0</td><td>-6</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Al</td>
+<td>0-4</td><td>0-2</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0-0</td><td>-4</td><td>0</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>2-3</td><td>0-0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>-4</td><td>2</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Jamal</td>
+<td>0-6</td><td>0-2</td><td>1</td><td>1</td><td>2</td><td>1</td><td>0</td><td>2</td><td>0</td><td>0-0</td><td>-6</td><td>0</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>5-18</td><td>0-5</td><td>3</td><td>9</td><td>12</td><td>1</td><td>0</td><td>6</td><td>3</td><td>0-0</td><td></td><td>5</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>27.8%</td><td>0.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+<tr><td colspan="13"></tr>
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #000000; background-color: #AAAAAA;">Lights</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Bryan</td>
+<td>1-3</td><td>0-0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0-0</td><td>+6</td><td>1</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Danny</td>
+<td>4-7</td><td>0-0</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td><td>1</td><td>3</td><td>0-0</td><td>+6</td><td>4</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Joel</td>
+<td>0-3</td><td>0-0</td><td>2</td><td>2</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>+6</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Justin W</td>
+<td>0-1</td><td>0-0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0-0</td><td>+6</td><td>0</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Steve</td>
+<td>6-8</td><td>0-0</td><td>0</td><td>4</td><td>4</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0-0</td><td>+6</td><td>6</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>0-0</td><td>0-0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>0</td><td>0</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>11-22</td><td>0-0</td><td>2</td><td>9</td><td>11</td><td>2</td><td>0</td><td>1</td><td>6</td><td>0-0</td><td></td><td>11</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>50.0%</td><td>0.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+</table>
+<h2>Game 4</h2><table cellpadding="3" cellspacing="1" border="0" width="100%" >
+
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #FFFFFF; background-color: #0000FF;">Darks</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">David K</td>
+<td>0-2</td><td>0-2</td><td>2</td><td>1</td><td>3</td><td>0</td><td>0</td><td>1</td><td>5</td><td>0-0</td><td>+8</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">David L</td>
+<td>4-6</td><td>0-0</td><td>1</td><td>4</td><td>5</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0-0</td><td>+8</td><td>4</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Blaz</td>
+<td>2-2</td><td>0-0</td><td>1</td><td>2</td><td>3</td><td>1</td><td>0</td><td>0</td><td>3</td><td>0-0</td><td>+8</td><td>2</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Al</td>
+<td>6-10</td><td>3-5</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0-0</td><td>+8</td><td>6</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Jamal</td>
+<td>3-8</td><td>0-4</td><td>0</td><td>3</td><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td><td>0-0</td><td>+8</td><td>3</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td align="center" colspan="13">DNP</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>15-28</td><td>3-11</td><td>4</td><td>12</td><td>16</td><td>1</td><td>1</td><td>1</td><td>13</td><td>0-0</td><td></td><td>15</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>53.6%</td><td>27.3%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+<tr><td colspan="13"></tr>
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #000000; background-color: #AAAAAA;">Lights</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td width="7%%" nowrap="nowrap">FGM-A</td>
+<td width="7%%" nowrap="nowrap">3PM-A</td>
+<td width="7%%" nowrap="nowrap">REB-O</td>
+<td width="7%%" nowrap="nowrap">REB-D</td>
+<td width="7%%" nowrap="nowrap">REB</td>
+<td width="7%%" nowrap="nowrap">STL</td>
+<td width="7%%" nowrap="nowrap">BLK</td>
+<td width="7%%" nowrap="nowrap">TO</td>
+<td width="7%%" nowrap="nowrap">AST</td>
+<td width="7%%" nowrap="nowrap">FTM-A</td>
+<td width="6%%">+/-</td>
+<td width="6%%">PTS</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Bryan</td>
+<td>2-5</td><td>0-0</td><td>0</td><td>3</td><td>3</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0-0</td><td>-8</td><td>2</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Danny</td>
+<td>2-7</td><td>0-0</td><td>2</td><td>1</td><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0-0</td><td>-8</td><td>2</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Joel</td>
+<td>0-2</td><td>0-0</td><td>2</td><td>2</td><td>4</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0-0</td><td>-8</td><td>0</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Justin W</td>
+<td>2-7</td><td>0-3</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>-8</td><td>2</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>1-6</td><td>0-0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0-0</td><td>-8</td><td>1</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Steve</td>
+<td align="center" colspan="13">DNP</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>7-27</td><td>0-3</td><td>5</td><td>7</td><td>12</td><td>1</td><td>0</td><td>2</td><td>2</td><td>0-0</td><td></td><td>7</td></tr>
+<tr align="right" class="percentrow"><td></td>
+<td>25.9%</td><td>0.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0%</td><td></td><td></td></tr>
+</table>
+<h2>Shot Locations</h2><table cellpadding="3" cellspacing="1" border="0" width="100%" >
+
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #FFFFFF; background-color: #0000FF;">Darks - Shot Locations</td></tr>
+<tr align="right" class="colheadrow"><td align="left">&nbsp;</td>
+<td colspan="2" align="center">Totals</td>
+<td colspan="2" align="center">&lt; 4 Feet</td>
+<td colspan="2" align="center">4-10 Feet</td>
+<td colspan="2" align="center">10-15 Feet</td>
+<td colspan="2" align="center">15 Feet - 3Pt.</td>
+<td colspan="2" align="center">3Pt.</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+</tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">David K</td>
+<td>0-6</td><td>0.0%</td><td>0-0</td><td>0.0%</td><td>0-0</td><td>0.0%</td><td>0-1</td><td>0.0%</td><td>0-0</td><td>0.0%</td><td>0-5</td><td>0.0%</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">David L</td>
+<td>10-16</td><td>62.5%</td><td>6-7</td><td>85.7%</td><td>3-5</td><td>60.0%</td><td>1-2</td><td>50.0%</td><td>0-2</td><td>0.0%</td><td>0-0</td><td>0.0%</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Blaz</td>
+<td>5-7</td><td>71.4%</td><td>2-3</td><td>66.7%</td><td>3-4</td><td>75.0%</td><td>0-0</td><td>0.0%</td><td>0-0</td><td>0.0%</td><td>0-0</td><td>0.0%</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Al</td>
+<td>12-28</td><td>42.9%</td><td>2-3</td><td>66.7%</td><td>1-6</td><td>16.7%</td><td>3-4</td><td>75.0%</td><td>0-0</td><td>0.0%</td><td>6-15</td><td>40.0%</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>5-13</td><td>38.5%</td><td>0-0</td><td>0.0%</td><td>3-4</td><td>75.0%</td><td>1-7</td><td>14.3%</td><td>1-2</td><td>50.0%</td><td>0-0</td><td>0.0%</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Jamal</td>
+<td>5-24</td><td>20.8%</td><td>1-3</td><td>33.3%</td><td>1-4</td><td>25.0%</td><td>1-4</td><td>25.0%</td><td>0-0</td><td>0.0%</td><td>2-13</td><td>15.4%</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>37-94</td><td>39.4%</td><td>11-16</td><td>68.8%</td><td>11-23</td><td>47.8%</td><td>6-18</td><td>33.3%</td><td>1-4</td><td>25.0%</td><td>8-33</td><td>24.2%</td></tr>
+<tr><td colspan="13"></tr>
+<tr class="teamnamerow">
+<td colspan="13" style="text-align: center; color: #000000; background-color: #AAAAAA;">Lights - Shot Locations</td></tr>
+<tr align="right" class="colheadrow"><td align="left">&nbsp;</td>
+<td colspan="2" align="center">Totals</td>
+<td colspan="2" align="center">&lt; 4 Feet</td>
+<td colspan="2" align="center">4-10 Feet</td>
+<td colspan="2" align="center">10-15 Feet</td>
+<td colspan="2" align="center">15 Feet - 3Pt.</td>
+<td colspan="2" align="center">3Pt.</td></tr>
+<tr align="right" class="colheadrow"><td align="left">PLAYERS</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+<td align="center" width="7%">M-A</td>
+<td align="center" width="7%">FG%</td>
+</tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Bryan</td>
+<td>3-9</td><td>33.3%</td><td>0-0</td><td>0.0%</td><td>0-2</td><td>0.0%</td><td>1-3</td><td>33.3%</td><td>2-4</td><td>50.0%</td><td>0-0</td><td>0.0%</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Danny</td>
+<td>9-28</td><td>32.1%</td><td>1-4</td><td>25.0%</td><td>2-5</td><td>40.0%</td><td>1-7</td><td>14.3%</td><td>5-11</td><td>45.5%</td><td>0-1</td><td>0.0%</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Joel</td>
+<td>3-16</td><td>18.8%</td><td>2-6</td><td>33.3%</td><td>0-5</td><td>0.0%</td><td>1-5</td><td>20.0%</td><td>0-0</td><td>0.0%</td><td>0-0</td><td>0.0%</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">Justin W</td>
+<td>11-27</td><td>40.7%</td><td>5-7</td><td>71.4%</td><td>2-5</td><td>40.0%</td><td>3-6</td><td>50.0%</td><td>0-1</td><td>0.0%</td><td>1-8</td><td>12.5%</td></tr>
+<tr class="oddrow" align="right">
+<td align="left" nowrap="nowrap">Steve</td>
+<td>11-16</td><td>68.8%</td><td>0-0</td><td>0.0%</td><td>3-3</td><td>100.0%</td><td>4-7</td><td>57.1%</td><td>4-6</td><td>66.7%</td><td>0-0</td><td>0.0%</td></tr>
+<tr class="evenrow" align="right">
+<td align="left" nowrap="nowrap">James P</td>
+<td>1-6</td><td>16.7%</td><td>0-1</td><td>0.0%</td><td>0-1</td><td>0.0%</td><td>0-2</td><td>0.0%</td><td>1-2</td><td>50.0%</td><td>0-0</td><td>0.0%</td></tr>
+<tr align="right" class="totalsrow"><td align="left">TOTALS</td>
+<td>38-102</td><td>37.3%</td><td>8-18</td><td>44.4%</td><td>7-21</td><td>33.3%</td><td>10-30</td><td>33.3%</td><td>12-24</td><td>50.0%</td><td>1-9</td><td>11.1%</td></tr>
+</table>
+
+<h2>Shot Chart - Darks</h2>
+<form class="chartselector">
+Show chart for:
+<select name="players" onchange="showPlayerChart(this.value, 'Darks', 'visitorShotChart')">
+   <option value="Darks">Darks</option>
+   <option value="David_K">David K</option>
+   <option value="David_L">David L</option>
+   <option value="Blaz">Blaz</option>
+   <option value="Al">Al</option>
+   <option value="James_P">James P</option>
+   <option value="Jamal">Jamal</option>
+</select>
+</form>
+<img class="shotchart" id="visitorShotChart" src="Shot_Chart_-_Darks_-_Totals.png" alt="Shot Chart - Darks" width="960" />
+
+<h2>Shot Chart - Lights</h2>
+<form class="chartselector">
+Show chart for:
+<select name="players" onchange="showPlayerChart(this.value, 'Lights', 'homeShotChart')">
+   <option value="Lights">Lights</option>
+   <option value="Bryan">Bryan</option>
+   <option value="Danny">Danny</option>
+   <option value="Joel">Joel</option>
+   <option value="Justin_W">Justin W</option>
+   <option value="Steve">Steve</option>
+   <option value="James_P">James P</option>
+</select>
+</form>
+<img class="shotchart" id="homeShotChart" src="Shot_Chart_-_Lights_-_Totals.png" alt="Shot Chart - Lights" width="960" />
+
+</body>
+</html>
